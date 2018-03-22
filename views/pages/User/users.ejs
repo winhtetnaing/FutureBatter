@@ -1,0 +1,46 @@
+<div class="jumbotron text-center">
+    <h1>All Person/User</h1>
+</div>
+
+<% if (success.length > 0) { %>
+    <div class="alert alert-success"><%= success %></div>
+<% } %>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>User Name</th>
+            <th>National Card</th>
+            <th>Date Of Birth</th>
+            <th>Gender</th>
+            <th>Designation</th>
+            <th>Phone No</th>
+            <th>Social</th>
+            <th>Remark</th>
+            <th>Joining Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <% for (var user of users) { %>
+            <tr>
+                <td><%= user.usrname %></td>
+                <td><%= user.nrc %></td>
+                <td><%=user.dob %></td>
+                <td><%=user.gender %></td>
+                <td><%=user.design %></td>
+                <td><%=user.ph%></td>
+                <td><%=user.social%></td>
+                <td><%=user.remark%></td>
+                <td><%=user.join_date%></td>
+                <td>
+                 <a href="# " class="btn btn-sm btn-primary">View</a>
+                    <a href="# " class="btn btn-sm btn-primary">Edit</a>
+                    <a href="#" class="btn btn-sm btn-danger">Delete</a>                  
+                </td>
+            </tr>
+        <% } %>
+
+    </tbody>
+</table>

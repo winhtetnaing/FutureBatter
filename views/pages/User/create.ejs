@@ -1,0 +1,115 @@
+<div class="text-center">
+    <h1>Create Person/Customer</h1>
+</div>
+ <div class="container">
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+
+        <% if (errors.length > 0) { %>
+            <div class="alert alert-danger">
+                <% for (error of errors) { %>
+                    <%= error %><br>
+                <% } %>
+            </div>
+        <% } %>
+        
+        <form action="/users/create" method="POST">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="usrname" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>NRC</label>
+                <input type="text" name="nrc" class="form-control">
+            </div>          
+            <div class="form-group">
+            <label>DATE OF BIRTH</label>
+                <div class='input-group date' id='datetimepicker2'>
+                    <input type='text' class="form-control" name="dob" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>    
+            <div class="form-group">
+                <label for="year" class="control-label input-group">Gender</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male">
+                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="female">
+                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>DESIGNATION</label>
+                <select class="form-control" name="design">
+                    <option  selected>Choose...</option>
+                    <option >Engineer</option>
+                    <option >Doctor</option>
+                    <option >Worker</option>
+                    <option >Director</option>
+                    <option >Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>CONTACT SOCIAL NETWORK </label>                              
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="social" value="Facebook">
+                    <label class="form-check-label" for="inlineCheckbox1">Facebook</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="social" value="Twitter">
+                    <label class="form-check-label" for="inlineCheckbox2">Twitter</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="social" value="Linked In" >
+                    <label class="form-check-label" for="inlineCheckbox3">Linked In </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="social" value="E-Mail" >
+                    <label class="form-check-label" for="inlineCheckbox3">E-Mail </label>
+                </div>                
+            </div>                       
+            <div class="form-group">
+                <label>PHONE NUMBER</label>  
+                <select id="countries_phone1" class="form-control bfh-countries" data-country="US" data-flags="true" ></select>                 
+                <br>                
+                <input type="text" class="form-control bfh-phone" data-country="countries_phone1" name="ph">
+            </div>
+                <div class="custom-file">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+                    <input type="file" class="custom-file-input" id="customFile">                    
+                </div>            
+            <div class="form-group">
+                <label>Remark</label>
+                <textarea name="remark" rows="5" class="form-control" name="remark"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg">Create</button>
+            </div>
+
+        </form>
+</div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker2').datetimepicker({
+           format :'DD/MM/YYYY'
+        });
+    });
+
+    $(document).ready(function(){
+        $("input[type='radio']").click(function(){
+            var radioValue = $("input[name='gender']:checked").val();
+            if(radioValue){
+                alert("Your are a - " + radioValue);
+            }
+        });
+        
+    });
+
+
+        </script>
