@@ -8,14 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/scotch-io/node-crud-course.git"
+    "url": "git+https://github.com/winhtetnaing/futurebatter.git"
   },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/scotch-io/node-crud-course/issues"
-  },
-  "homepage": "https://github.com/scotch-io/node-crud-course#readme",
+  "license": "ISC",  
+  "homepage": "https://github.com/winhtetnaing/futurebatter#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "connect-flash": "^0.1.1",
