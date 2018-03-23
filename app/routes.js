@@ -5,6 +5,7 @@ const express      = require('express'),
   eventsController = require('./controllers/events.controller'),
   usersController = require('./controllers/users.controller'),
   tutoController =require('./controllers/tuto.controller');
+  mappingController=require('./controllers/mapping.controller');
 
 // export router
 module.exports = router;
@@ -44,3 +45,6 @@ router.post('/users/create', usersController.processCreate);
 //info
 router.get('/training/schedule',tutoController.showInfo);
 router.get('/training/requiretool',tutoController.reqtool);
+
+//mapping for event and user
+router.get('/attend/show',mappingController.showMapping);
